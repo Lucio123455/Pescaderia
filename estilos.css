@@ -1,21 +1,19 @@
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    margin: 100px;
 }
 
-#titulo {
-    display: flex;
-    justify-content: center;
-    margin: 35px;
-}
 .container {
     max-width: 800px;
+    margin: auto;
     padding: 20px;
+    background-color: rgba(8, 92, 116, 0.7); /* Fondo blanco semitransparente más transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
+
+
 img {
     position: fixed;
     top: 0;
@@ -26,31 +24,48 @@ img {
     z-index: -1; /* Asegura que la imagen esté detrás del contenido */
 }
 
-
 h1 {
-    color: #000000;
+    color: #000;
     text-align: center;
 }
 
 button {
     background-color: #4CAF50;
     color: white;
-    padding: 8px 16px; /* Reducir el padding */
+    padding: 8px 16px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 16px; /* Reducir el tamaño de fuente */
-    margin-left: 100px;
+    font-size: 16px;
+    margin-right: 10px; /* Espacio entre botones */
 }
 
-button:hover {
-    background-color: #45a049;
+#titulo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Espacio entre el título y los botones */
+}
+
+.container > div {
+    margin-bottom: 20px; /* Espacio entre los botones y los inputs de texto */
+}
+
+.container > div > p {
+    margin-bottom: 10px; /* Espacio entre los inputs de texto */
+}
+
+input[type="text"] {
+    padding: 6px; /* Ajuste del padding */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente */
+    width: calc(50% - 5px); /* Ancho del 50% con espacio entre los inputs */
 }
 
 #productos {
     list-style-type: none;
     padding: 0;
-    margin-top: 20px;
+    margin: 20px 0; /* Espacio entre los productos y otros elementos */
 }
 
 #productos li {
@@ -59,6 +74,7 @@ button:hover {
     margin-bottom: 10px;
     padding: 15px;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 #productos li h3 {

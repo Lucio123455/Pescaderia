@@ -10,13 +10,19 @@
 
 <body>
     <img src="fondo.jpg" alt="">
-    <div id="titulo">
-        <h1>Productos</h1>
-        <button onclick="agregarProducto()">Crear Producto</button>
-    </div>
-
-    <div id="productos">
-
+    <div class="container">
+        <div id="titulo">
+            <h1>Productos</h1>
+            <button onclick="agregarProducto()">Crear Producto</button>
+        </div>
+        <div>
+            <button onclick="ingresarCostosFijos()">Ingresar Costos</button>
+            <button onclick="borrarDatosCostosBeneficios()">Restablecer</button>
+            <p>Costo fijo: <input id="costo-fijo" type="text"></p>
+            <p>Beneficio objetivo: <input id="beneficio-objetivo" type="text"></p>
+        </div>
+        <p>Beneficio Total: <input id="beneficio-total" type="text"></p>
+        <div id="productos"></div>
     </div>
 
     <script src="main.js"></script>
