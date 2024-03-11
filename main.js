@@ -53,8 +53,7 @@ function agregarProducto() {
 
 
 
-// Guardar el valor de felicitacion en el almacenamiento local
-let felicitacion = localStorage.getItem('felicitacion') || false;
+
 
 function actualizarBeneficioTotal() {
     const beneficioTotalContent = document.getElementById("beneficio-total");
@@ -66,18 +65,6 @@ function actualizarBeneficioTotal() {
     const costosBeneficiosJSON = localStorage.getItem('costosBeneficios');
     const costosBeneficios = JSON.parse(costosBeneficiosJSON);
 
-    // Recuperar el valor de felicitacion del almacenamiento local
-    let felicitacionGuardada = localStorage.getItem('felicitacion');
-
-    // Convertir el valor de felicitacionGuardada a un booleano
-    felicitacionGuardada = JSON.parse(felicitacionGuardada);
-    console.log(felicitacionGuardada)
-    // Verificar la condición utilizando el valor recuperado
-    if (felicitacion === true && beneficioTotal !== 0 && beneficioTotal >= costosBeneficios.beneficioObjetivo) {
-        alert("¡Ya tienes el beneficio objetivo!");
-        felicitacion = true;
-        localStorage.setItem('felicitacion', felicitacion);
-    }
 }
 
 function calcularBeneficio(cantidad, costo, margen) {
@@ -130,8 +117,7 @@ function borrarDatosCostosBeneficios() {
     };
 
     localStorage.setItem('costosBeneficios', JSON.stringify(costosBeneficios));
-    felicitacion = false;
-    localStorage.setItem('felicitacion', felicitacion);
+    
     actualizarCostosBeneficios();
     // Realizar cualquier otra acción necesaria, como actualizar la interfaz de usuario
 }
@@ -146,8 +132,6 @@ function ingresarCostosFijos() {
         beneficioObjetivo: 0
     };
 
-    felicitacion = false
-    localStorage.setItem('felicitacion', felicitacion);
     do {
         costosBeneficios.luz = parseFloat(prompt("Ingrese el costo de la luz"));
     } while (isNaN(costosBeneficios.luz) || costosBeneficios.luz <= 0);
@@ -201,3 +185,21 @@ function mostrarProductosEnHTML() {
 }
 
 window.addEventListener('load', mostrarProductosEnHTML);
+
+
+function mostrarProductosSeccion() {
+    const productosSeccion = document.querySelector('.productosSeccion');
+    productosSeccion.style.display = 'block';
+    const principal = document.querySelector('.seccion-principal');
+    principal.style.display = 'none'
+}
+
+// Luego, puedes llamar a esta función desde cualquier lugar de tu código donde sea necesario, por ejemplo:
+// mostrarProductosSeccion();
+function cerrarProductosSeccion() {
+    const productosSeccion = document.querySelector('.productosSeccion');
+    productosSeccion.style.display = 'none';
+    const principal = document.querySelector('.seccion-principal');
+    principal.style.display = 'block'
+}
+

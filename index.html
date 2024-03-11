@@ -10,9 +10,56 @@
 
 <body>
     <img src="fondo.jpg" alt="">
-    <div class="container">
+
+
+    <div class="seccion-principal">
+        <h1 class="titulo-principal">Pescaderia</h1>
+        <button class="boton-seccion-principal" onclick="mostrarProductosSeccion()">Ver Productos</button>
+        <button class="boton-seccion-principal" onclick="mostrarProductosSeccion()">Ver Pagos</button>
+        <div class="juego">
+            <button onclick="comenzarJuego()">Comenzar</button>
+            <p id="vidas"></p>
+            <div id="mesa">
+
+            </div>
+            <div id="tablero">
+                <button onclick="seleccionarLetra('A')">A</button>
+                <button onclick="seleccionarLetra('B')">B</button>
+                <button onclick="seleccionarLetra('C')">C</button>
+                <button onclick="seleccionarLetra('D')">D</button>
+                <button onclick="seleccionarLetra('E')">E</button>
+                <button onclick="seleccionarLetra('F')">F</button>
+                <button onclick="seleccionarLetra('G')">G</button>
+                <button onclick="seleccionarLetra('H')">H</button>
+                <button onclick="seleccionarLetra('I')">I</button>
+                <button onclick="seleccionarLetra('J')">J</button>
+                <button onclick="seleccionarLetra('K')">K</button>
+                <button onclick="seleccionarLetra('L')">L</button>
+                <button onclick="seleccionarLetra('M')">M</button>
+                <button onclick="seleccionarLetra('N')">N</button>
+                <button onclick="seleccionarLetra('O')">O</button>
+                <button onclick="seleccionarLetra('P')">P</button>
+                <button onclick="seleccionarLetra('Q')">Q</button>
+                <button onclick="seleccionarLetra('R')">R</button>
+                <button onclick="seleccionarLetra('S')">S</button>
+                <button onclick="seleccionarLetra('T')">T</button>
+                <button onclick="seleccionarLetra('U')">U</button>
+                <button onclick="seleccionarLetra('V')">V</button>
+                <button onclick="seleccionarLetra('W')">W</button>
+                <button onclick="seleccionarLetra('X')">X</button>
+                <button onclick="seleccionarLetra('Y')">Y</button>
+                <button onclick="seleccionarLetra('Z')">Z</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="productosSeccion" style="display: none;">
+        <span class="cerrar" onclick="cerrarProductosSeccion()" style="cursor: pointer; float: right;">✖</span>
         <div id="titulo">
-            <h1>Productos</h1>
+            <h2>Productos</h2>
             <button onclick="agregarProducto()">Crear Producto</button>
         </div>
         <div>
@@ -24,6 +71,8 @@
         <p>Beneficio Total: <input id="beneficio-total" type="text"></p>
         <div id="productos"></div>
     </div>
+
+    <script src="ahorcado.js"></script>
 
     <script src="main.js"></script>
 </body>

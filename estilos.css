@@ -4,7 +4,34 @@ body {
     padding: 0;
 }
 
-.container {
+.seccion-principal {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.titulo-principal {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.boton-seccion-principal {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-seccion-principal:hover {
+    background-color: #45a049;
+}
+
+
+.productosSeccion {
     max-width: 800px;
     margin: auto;
     padding: 20px;
@@ -25,6 +52,11 @@ img {
 }
 
 h1 {
+    color: #000;
+    text-align: center;
+}
+
+h2 {
     color: #000;
     text-align: center;
 }
