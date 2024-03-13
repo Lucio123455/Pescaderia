@@ -131,3 +131,9 @@ input[type="text"] {
     font-weight: bold;
 }
 
+.juego {
+    margin: 70px auto; /* Establece un margen superior e inferior de 70px y centra horizontalmente */
+    max-width: 600px; /* Establece un ancho máximo para el elemento */
+    padding: 20px; /* Agrega un espacio interno */
+    background-color: rgba(8, 92, 116, 0.7); /* Fondo blanco semitransparente más transparente */
+}
