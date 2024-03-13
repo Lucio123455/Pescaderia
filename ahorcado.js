@@ -13,14 +13,33 @@ function comenzarJuego() {
     const vidasTextContent = document.getElementById("vidas")
     vidasTextContent.textContent = vidas
     juegoIniciado = true
+    mostrarTodasLasLetras()
 }
 
 function seleccionarLetra(letra) {
     if (juegoIniciado === true) {
         buscarYCompletarPalabra(palabraDeLaPartida, letra);
         revisarSiGanaste()
+        sacarLetra(letra)
     }
 }
+
+function mostrarTodasLasLetras() {
+    const botones = document.querySelectorAll('#tablero button');
+    botones.forEach(boton => {
+        boton.style.display = 'inline-block';
+    });
+}
+
+function sacarLetra(letra) {
+    const botones = document.getElementsByClassName(`${letra}`);
+    if (botones.length > 0) {
+        for (let i = 0; i < botones.length; i++) {
+            botones[i].style.display = 'none';
+        }
+    }
+}
+
 
 function revisarSiGanaste() {
     let guiones = mesa.getElementsByTagName("span");
