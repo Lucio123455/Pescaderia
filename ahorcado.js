@@ -1,7 +1,11 @@
 const palabrasPosibles = ['SALMON', 'MERLUZA', 'HIPOCAMPO', 'TRUCHA', 'DORADA',
-    'SARDINA', 'ATUN', 'BACALAO', 'ROBALO', 'ANCHOA', 'RAPE'];
+    'SARDINA', 'ATUN', 'BACALAO', 'ROBALO', 'ANCHOA', 'RAPE', 'PULPO', 'CANGREJO',
+    'LANGOSTA', 'MEJILLON', 'CALAMAR', 'CAMARON', 'CABALLA', 'TIBURON', 'PEZ ESPADA',
+    'LUBINA', 'OSTRA', 'ANGUILA', 'CARPA', 'BESUGO', 'BARRACUDA', 'PEZ GLOBO', 'SALMONETE',
+    'BALLENA', 'FOCA', 'ESTRELLA DE MAR', 'JUREL', 'BROTE', 'LENGUADO'];
 
-let vidas = 5;
+
+let vidas = 6;
 let palabraDeLaPartida;
 let juego
 
@@ -9,10 +13,16 @@ function comenzarJuego() {
     palabraDeLaPartida = seleccionarPalabraDeLaPartida();
     console.log('Palabra seleccionada:', palabraDeLaPartida);
     escribirGuiones(palabraDeLaPartida);
-    vidas = 5;
-    const vidasTextContent = document.getElementById("vidas")
-    vidasTextContent.textContent = vidas
+    vidas = 6;
     juegoIniciado = true
+    const vidasElemento = document.getElementById("vidas");
+    vidasElemento.innerHTML = ""; // Limpiar el contenido existente
+    const img = document.createElement("img");
+    img.src = 'vida6.png'; // Reemplaza "URL_DE_LA_IMAGEN" con la URL de la imagen de ahorcado
+    img.alt = "Vida perdida";
+    img.style.width = "auto"; // Establecer el ancho de la imagen
+    img.style.height = "160px"; // Establecer la altura de la imagen
+    vidasElemento.appendChild(img);
     mostrarTodasLasLetras()
 }
 
@@ -65,8 +75,8 @@ function alertaDeJuego(ganoOPerdio) {
     let title = ganoOPerdio === "gano" ? "¡Felicidades, ganaste!" : "¡Lo siento, perdiste!";
     let background = ganoOPerdio === "gano" ? "#c3e6cb" : "#f8d7da";
     let icon = ganoOPerdio === "gano" ? "success" : "error";
-    let imageUrl = ganoOPerdio === "gano" ? "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHRnd2tudGI4aHdzY3Fzc3BuMXZ1M2hvNTd3bTA0b25weGh5aHZyciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1GTZA4flUzQI0/giphy.gif" : 
-    "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmZpZWduNDl1cTM0dzBqdjhnZGwxZDVjNDJrbnZucDJtMWlyY2pucCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OPU6wzx8JrHna/giphy.gif";
+    let imageUrl = ganoOPerdio === "gano" ? "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHRnd2tudGI4aHdzY3Fzc3BuMXZ1M2hvNTd3bTA0b25weGh5aHZyciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1GTZA4flUzQI0/giphy.gif" :
+        "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmZpZWduNDl1cTM0dzBqdjhnZGwxZDVjNDJrbnZucDJtMWlyY2pucCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OPU6wzx8JrHna/giphy.gif";
     Swal.fire({
         title: title,
         icon: icon,
@@ -83,7 +93,6 @@ function alertaDeJuego(ganoOPerdio) {
         `
     });
 }
-
 
 function completarPalabra() {
     let guiones = mesa.getElementsByTagName("span");
@@ -108,9 +117,28 @@ function buscarYCompletarPalabra(palabraDeLaPartida, letraDeLaRonda) {
         vidas--;
     }
 
-    const vidasTextContent = document.getElementById("vidas")
-    vidasTextContent.textContent = vidas
+    dibujarAhorcado()
 }
+
+function dibujarAhorcado() {
+    const vidasElemento = document.getElementById("vidas");
+    vidasElemento.innerHTML = ""; // Limpiar el contenido existente
+    let urlAhorcado
+
+    for (let i = 0; i <= vidas; i++) {
+        if (vidas === i) {
+            urlAhorcado = `vida${i}.png`
+        }
+    }
+
+    const img = document.createElement("img");
+    img.src = urlAhorcado; // Reemplaza "URL_DE_LA_IMAGEN" con la URL de la imagen de ahorcado
+    img.alt = "Vida perdida";
+    img.style.width = "auto"; // Establecer el ancho de la imagen
+    img.style.height = "160px"; // Establecer la altura de la imagen
+    vidasElemento.appendChild(img);
+}
+
 
 function seleccionarPalabraDeLaPartida() {
     const indiceAleatorio = Math.floor(Math.random() * palabrasPosibles.length);
@@ -123,8 +151,13 @@ function escribirGuiones(palabraDeLaPartida) {
 
     for (let i = 0; i < palabraDeLaPartida.length; i++) {
         const guion = document.createElement("span");
-        guion.textContent = "_ ";
-        guion.style.fontSize = "80px";
+        if (palabraDeLaPartida[i] === " ") {
+            guion.textContent = "/"; // Agregar espacio en lugar de guión
+        } else {
+            guion.textContent = "_ ";
+        }
+        guion.style.fontSize = "70px";
         mesa.appendChild(guion);
     }
 }
+

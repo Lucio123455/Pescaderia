@@ -47,8 +47,6 @@ function agregarProducto() {
     productoHtml(nombre, precio, cantidad, costo, margen, beneficio, ganancia, costoTotal, indice); // Aquí se pasan todos los argumentos necesarios
     localStorage.setItem('productos', JSON.stringify(productos));
     actualizarBeneficioTotal()
-
-
 }
 
 
