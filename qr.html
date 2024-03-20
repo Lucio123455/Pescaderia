@@ -13,8 +13,10 @@
 		<script defer src="qr.js"></script>
 	</head>
 	<body>
+
+		
 		<div class="contenedor">
-			<form action="" id="formulario" class="formulario">
+			
 				<input type="text" id="producto" placeholder="Escribe el producto"/>
                 <input type="text" id="porcentaje" placeholder="Escribe el descuento">
 				<select id="dia">
@@ -25,9 +27,7 @@
 				</select>
 				
 				<button class="btn" onclick="generarQR()">Generar QR</button>
-				<button onclick="copiarCodigoQR()">Copiar código QR</button>
-			</form>
-
+				<a href="index.html"><button>Volver</button></a>
 			<div id="contenedorQR" class="contenedorQR"></div>
 		</div>
 

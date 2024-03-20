@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #555;
 }
 
 .seccion-principal {
@@ -161,4 +162,8 @@ input[type="text"] {
 
 .cartel a {
     color: #007bff;
+}
+
+#contenedorQR {
+    display: none;
 }
