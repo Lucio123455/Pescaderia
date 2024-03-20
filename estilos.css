@@ -138,3 +138,27 @@ input[type="text"] {
     padding: 20px; /* Agrega un espacio interno */
     background-color: rgba(8, 92, 116, 0.7); /* Fondo blanco semitransparente más transparente */
 }
+
+.dias {
+    background-color: #45a049;
+}
+
+.cartel {
+    background-color: #6dda4f;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+   margin-bottom: 300px;
+    text-align: center;
+    
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.cartel p {
+    margin: 0;
+}
+
+.cartel a {
+    color: #007bff;
+}

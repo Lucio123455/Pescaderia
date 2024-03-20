@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pescaderia</title>
     <link rel="stylesheet" href="estilos.css">
+    
 </head>
 
 <body>
@@ -16,6 +17,7 @@
         </h1>
         <button class="boton-seccion-principal" onclick="mostrarProductosSeccion()">Ver Productos</button>
         <button class="boton-seccion-principal" onclick="mostrarProductosSeccion()">Ver Pagos</button>
+        <a href="qr.html"><button class="boton-seccion-principal">Codigos de Descuento</button></a>
         <div class="juego">
             <button onclick="comenzarJuego()">Comenzar</button>
             <p id="vidas"></p>
@@ -54,9 +56,6 @@
         </div>
     </div>
 
-
-
-
     <div class="productosSeccion" style="display: none;">
         <span class="cerrar" onclick="cerrarProductosSeccion()" style="cursor: pointer; float: right;">✖</span>
         <div id="titulo">
@@ -73,10 +72,12 @@
         <div id="productos"></div>
     </div>
 
+    
+    
     <script src="ahorcado.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <script src="main.js"></script>
+    
 </body>
 
 </html>
