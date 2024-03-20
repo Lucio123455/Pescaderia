@@ -149,11 +149,10 @@ input[type="text"] {
     border: 1px solid #ced4da;
     border-radius: 5px;
     padding: 10px;
-   margin-bottom: 300px;
+    margin-bottom: 300px;
     text-align: center;
     
-    margin-left: 250px;
-    margin-right: 250px;
+   
 }
 
 .cartel p {
