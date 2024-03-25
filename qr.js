@@ -40,7 +40,7 @@ function generarQR() {
 }
 
 function generarLink(dia) {
-    return "https://lucio123455.github.io/Pescaderia/qr.html" + dia;
+    return "https://lucio123455.github.io/Pescaderia/qr.html#" + dia;
 }
 
 function crearDescuento(dia) {
