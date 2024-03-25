@@ -69,6 +69,9 @@ function mostrarCarteles(){
     }
 }
 
+function borrarItemLocalStorage(clave) {
+    localStorage.removeItem(clave);
+}
 
 mostrarCarteles()
 
